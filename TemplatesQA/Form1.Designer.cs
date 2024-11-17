@@ -51,63 +51,51 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.taskKanbanToolStripMenuItem,
-            this.bugKanbanToolStripMenuItem,
-            this.templateSDTitleToolStripMenuItem,
-            this.testesMRToolStripMenuItem,
-            this.queryParaTestesToolStripMenuItem,
-            this.stringQAToolStripMenuItem,
             this.sairToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(173, 158);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
             // 
             // taskKanbanToolStripMenuItem
             // 
             this.taskKanbanToolStripMenuItem.Name = "taskKanbanToolStripMenuItem";
-            this.taskKanbanToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.taskKanbanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.taskKanbanToolStripMenuItem.Text = "Task Kanban";
-            this.taskKanbanToolStripMenuItem.Click += new System.EventHandler(this.taskKanbanToolStripMenuItem_Click);
             // 
             // bugKanbanToolStripMenuItem
             // 
             this.bugKanbanToolStripMenuItem.Name = "bugKanbanToolStripMenuItem";
-            this.bugKanbanToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.bugKanbanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.bugKanbanToolStripMenuItem.Text = "Bug Kanban";
-            this.bugKanbanToolStripMenuItem.Click += new System.EventHandler(this.bugKanbanToolStripMenuItem_Click);
             // 
             // templateSDTitleToolStripMenuItem
             // 
             this.templateSDTitleToolStripMenuItem.Name = "templateSDTitleToolStripMenuItem";
-            this.templateSDTitleToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.templateSDTitleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.templateSDTitleToolStripMenuItem.Text = "Título Service Desk";
-            this.templateSDTitleToolStripMenuItem.Click += new System.EventHandler(this.templateSDTitleToolStripMenuItem_Click);
             // 
             // testesMRToolStripMenuItem
             // 
             this.testesMRToolStripMenuItem.Name = "testesMRToolStripMenuItem";
-            this.testesMRToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.testesMRToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.testesMRToolStripMenuItem.Text = "Testes MR";
-            this.testesMRToolStripMenuItem.Click += new System.EventHandler(this.testesMRToolStripMenuItem_Click);
             // 
             // queryParaTestesToolStripMenuItem
             // 
             this.queryParaTestesToolStripMenuItem.Name = "queryParaTestesToolStripMenuItem";
-            this.queryParaTestesToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.queryParaTestesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.queryParaTestesToolStripMenuItem.Text = "Query para testes";
-            this.queryParaTestesToolStripMenuItem.Click += new System.EventHandler(this.queryParaTestesToolStripMenuItem_Click);
             // 
             // stringQAToolStripMenuItem
             // 
             this.stringQAToolStripMenuItem.Name = "stringQAToolStripMenuItem";
-            this.stringQAToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.stringQAToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.stringQAToolStripMenuItem.Text = "String QA";
-            this.stringQAToolStripMenuItem.Click += new System.EventHandler(this.stringQAToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.BackColor = System.Drawing.Color.LightCoral;
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click_1);
             // 
