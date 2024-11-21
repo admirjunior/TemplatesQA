@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32; // Biblioteca para manipular o registro
+using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -18,14 +19,58 @@ namespace TemplatesQA
             notifyIcon1.ContextMenuStrip = contextMenuStrip1;
             notifyIcon1.Visible = true;
 
+            // Associa o evento de abertura do menu para atualizar a lista
+            contextMenuStrip1.Opening += ContextMenuStrip1_Opening;
+
             // Associa o evento de renderização personalizada
             contextMenuStrip1.Renderer = new ToolStripProfessionalRenderer(new CustomMenuColorTable());
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            ConfigurarInicioComWindows();
             CarregarTemplates();
             AdicionarItemSair(); // Adiciona o item fixo "Sair"
+        }
+
+        private void ConfigurarInicioComWindows()
+        {
+            try
+            {
+                string caminhoAplicativo = Application.ExecutablePath;
+                string nomeAplicativo = "TemplatesQA";
+
+                using (RegistryKey chave = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run", true))
+                {
+                    if (chave.GetValue(nomeAplicativo) == null)
+                    {
+                        chave.SetValue(nomeAplicativo, caminhoAplicativo);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao configurar o início automático: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ContextMenuStrip1_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            AtualizarTemplates();
+        }
+
+        private void AtualizarTemplates()
+        {
+            try
+            {
+                contextMenuStrip1.Items.Clear(); // Limpa o menu atual
+                CarregarTemplates();            // Recarrega os templates
+                AdicionarItemSair();            // Reinsere o item fixo "Sair"
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao atualizar a lista: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void CarregarTemplates()
@@ -69,16 +114,14 @@ namespace TemplatesQA
 
         private void AdicionarItemSair()
         {
-            // Cria o item fixo "Sair"
             var sairItem = new ToolStripMenuItem("Sair")
             {
-                BackColor = Color.LightCoral, // Define a cor de fundo vermelha suave
-                ForeColor = Color.White       // Define a cor do texto como branco
+                BackColor = Color.LightCoral,
+                ForeColor = Color.White
             };
             sairItem.Click += SairMenuItem_Click;
 
-            // Adiciona o item "Sair" ao final do menu
-            contextMenuStrip1.Items.Add(new ToolStripSeparator()); // Adiciona um separador antes de "Sair"
+            contextMenuStrip1.Items.Add(new ToolStripSeparator());
             contextMenuStrip1.Items.Add(sairItem);
         }
 
@@ -115,10 +158,9 @@ namespace TemplatesQA
         }
     }
 
-    // Classe personalizada para alterar cores do ContextMenuStrip
     public class CustomMenuColorTable : ProfessionalColorTable
     {
-        public override Color MenuItemSelected => Color.LightCoral;  // Cor ao passar o mouse
-        public override Color MenuItemBorder => Color.Red;           // Borda do item ao passar o mouse
+        public override Color MenuItemSelected => Color.LightCoral;
+        public override Color MenuItemBorder => Color.Red;
     }
 }

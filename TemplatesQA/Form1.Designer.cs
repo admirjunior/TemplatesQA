@@ -38,8 +38,6 @@
             this.testesMRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.queryParaTestesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stringQAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // notifyIcon1
@@ -50,10 +48,8 @@
             // 
             // contextMenuStrip1
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sairToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // taskKanbanToolStripMenuItem
             // 
@@ -91,14 +87,6 @@
             this.stringQAToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.stringQAToolStripMenuItem.Text = "String QA";
             // 
-            // sairToolStripMenuItem
-            // 
-            this.sairToolStripMenuItem.BackColor = System.Drawing.Color.LightCoral;
-            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.sairToolStripMenuItem.Text = "Sair";
-            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click_1);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -108,7 +96,6 @@
             this.Name = "Form1";
             this.Text = "TemplatesQA";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -123,7 +110,6 @@
         private System.Windows.Forms.ToolStripMenuItem testesMRToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem queryParaTestesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stringQAToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
     }
 }
 
